@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Firawynix Center",
+  "mainBinaryName": "FirawynixCenter",
+  "version": "1.2.3",
+  "identifier": "br.com.firawynix.center",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5183",
+    "beforeDevCommand": "npx vite",
+    "beforeBuildCommand": "npx vite build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Firawynix Center",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1024,
+        "minHeight": 660,
+        "resizable": true,
+        "decorations": false,
+        "center": true,
+        "backgroundColor": "#0f172a"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "publisher": "Firawynix",
+    "copyright": "Firawynix",
+    "shortDescription": "Central de atalhos e projetos Firawynix",
+    "longDescription": "Organiza e abre projetos web e aplicativos Firawynix já instalados no computador.",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico", "icons/icon.png"],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["PortugueseBR", "English"],
+        "displayLanguageSelector": false,
+        "installerHooks": "windows/hooks.nsh"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDlBOEY3NzQzQUNDN0RGNUUKUldSZTM4ZXNRM2VQbXZ4ZEVBMFgvS3pablhLMFR1a2UrWFpHaXVDS1ppV0tDOVB3enRBOEt0Z1EK",
+      "endpoints": ["https://jogos.firawynix.com.br/api/games/launcher/atualizacao.json"],
+      "windows": {
+        "installMode": "quiet"
+      }
+    }
+  }
+}

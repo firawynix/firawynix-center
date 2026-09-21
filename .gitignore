@@ -1,0 +1,22 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+*.log
+tools/inno-teste/*.exe
+packaging/windows/msix/artifacts/
+artifacts/
+packaging/windows/bootstrap/**/obj/
+
+# Private operational material must never enter the public repository.
+.notebook/
+chave/
+packaging/windows/bootstrap/
+packaging/windows/store-assets/
+packaging/windows/msix/*.json
+!packaging/windows/msix/firawynix-center.json
+tools/arte/
+tools/inno-teste/
+tools/systemd/
+tools/publicar-launcher.sh
+tools/sync-release-center.sh

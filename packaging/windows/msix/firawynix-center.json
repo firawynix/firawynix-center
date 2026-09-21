@@ -1,0 +1,13 @@
+{
+  "storeIdentityName": "Firawynix.FirawynixCenter",
+  "siteIdentityName": "Firawynix.Center",
+  "applicationId": "FirawynixCenter",
+  "displayName": "Firawynix Center",
+  "publisherDisplayName": "Firawynix",
+  "description": "Central de atalhos e projetos Firawynix",
+  "version": "1.2.3",
+  "architecture": "x64",
+  "payloadPath": "../../../src-tauri/target/release/FirawynixCenter.exe",
+  "executable": "FirawynixCenter.exe",
+  "icon": "../../../src-tauri/icons/icon.png"
+}

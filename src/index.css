@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply overflow-hidden bg-surface font-sans text-slate-200 antialiased;
+    /* app, não página: nada de selecionar o menu sem querer ao arrastar */
+    user-select: none;
+  }
+  [data-texto] {
+    user-select: text;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-surface-lighter;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-surface;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-5 py-2.5 font-semibold text-slate-900
+      transition hover:bg-brand-glow disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-surface-lighter bg-surface-light px-4 py-2.5
+      font-semibold text-slate-200 transition hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .card {
+    @apply rounded-xl border border-surface-lighter bg-surface-light p-6;
+  }
+  .section-title {
+    @apply mb-2 font-mono text-xs uppercase tracking-widest text-brand;
+  }
+}
+
+@keyframes listra {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+/* barra "trabalhando" quando não há porcentagem (verificando / instalando) */
+.barra-indeterminada {
+  background-image: linear-gradient(
+    45deg,
+    rgb(34 211 238 / 0.9) 25%,
+    rgb(34 211 238 / 0.45) 25%,
+    rgb(34 211 238 / 0.45) 50%,
+    rgb(34 211 238 / 0.9) 50%,
+    rgb(34 211 238 / 0.9) 75%,
+    rgb(34 211 238 / 0.45) 75%
+  );
+  background-size: 40px 40px;
+  animation: listra 1s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .barra-indeterminada {
+    animation: none;
+  }
+}
+
+/* Botão de apoiar (igual ao do portfólio): o brilho respira em 2,4 s em vez de
+   piscar rápido; quem pediu menos animação ao sistema recebe a versão parada. */
+@keyframes apoiarBrilho {
+  0%, 100% { box-shadow: 0 0 10px rgb(34 211 238 / 0.45); }
+  50%      { box-shadow: 0 0 22px rgb(103 232 249 / 0.65); }
+}
+.animate-apoiar { animation: apoiarBrilho 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .animate-apoiar { animation: none; } }
