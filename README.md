@@ -67,6 +67,8 @@ secrets for CI credentials and local environment variables for development.
 
 Report vulnerabilities through
 [GitHub private vulnerability reporting](../../security/advisories/new).
+Read the [privacy policy](PRIVACY.md) for the application's network and local
+storage behavior.
 
 ## Code signing policy
 
@@ -77,6 +79,9 @@ unrelated binaries with the project's signing identity.
 
 Read the complete [code signing policy](CODE_SIGNING_POLICY.md).
 
+Public builds are available on the
+[GitHub releases page](https://github.com/firawynix/firawynix-center/releases).
+
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a change.
@@ -84,4 +89,3 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a change.
 ## License
 
 Firawynix Center is available under the [MIT License](LICENSE).
-
